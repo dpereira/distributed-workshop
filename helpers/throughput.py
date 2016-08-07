@@ -11,6 +11,8 @@ class Counter:
         self.start()
 
     def _throuput_counter(self):
+        self.running = True
+
         while self.running:
             print "\r{} requets/s".format(self.counter),
             sys.stdout.flush()
@@ -22,15 +24,10 @@ class Counter:
             target=self._throuput_counter
         )
 
-        self.running = True
-
         self.thread.start()
 
     def stop(self):
         self.running = False
-        self.join()
-
-    def join(self):
         self.thread.join()
 
     def inc(self):
