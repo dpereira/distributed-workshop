@@ -1,3 +1,4 @@
+docopt==0.6.2
 pyzmq==15.3.0
 wheel==0.26.0
 zmq==0.0.0
